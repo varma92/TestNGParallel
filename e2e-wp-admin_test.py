@@ -2,9 +2,8 @@ from selenium import webdriver
 
 # Initialize Driver
 print "# Initialize Driver"
-driver = webdriver.Firefox()
+driver = webdriver.Chrome()
 driver.get("http://localhost/wp-admin/setup-config.php")
-# print driver.title
 
 # Select language
 print "# Select language"
@@ -22,7 +21,7 @@ driver.find_element_by_name("submit").click()
 # Run Installation
 print "# Run Installation"
 driver.find_element_by_link_text("Run the installation").click()
-# driver.find_element_by_id("weblog_title").clear()
+driver.find_element_by_id("weblog_title").clear()
 driver.find_element_by_id("weblog_title").send_keys("Data-Storage")
 driver.find_element_by_id("user_login").clear()
 driver.find_element_by_id("user_login").send_keys("purestorage")
