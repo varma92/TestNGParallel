@@ -1,4 +1,5 @@
 from selenium import webdriver
+from time import sleep
 
 # Initialize Driver
 print "# Initialize Driver"
@@ -9,12 +10,12 @@ driver.get("http://localhost/wp-admin/setup-config.php")
 # Select language
 print "# Select language"
 driver.find_element_by_id("language-continue").click()
-driver.implicitly_wait(30)
+sleep(30)
 
 # Configure database
 print "# Configure database"
 driver.find_element_by_css_selector("body > p.step > a").click()
-driver.implicitly_wait(30)
+sleep(30)
 driver.find_element_by_id("uname").clear()
 driver.find_element_by_id("uname").send_keys("wordpress")
 driver.find_element_by_id("pwd").clear()
@@ -24,7 +25,7 @@ driver.find_element_by_name("submit").click()
 # Run Installation
 print "# Run Installation"
 driver.find_element_by_link_text("Run the installation").click()
-driver.implicitly_wait(30)
+sleep(30)
 driver.find_element_by_id("weblog_title").clear()
 driver.find_element_by_id("weblog_title").send_keys("Data-Storage")
 driver.find_element_by_id("user_login").clear()
@@ -39,7 +40,7 @@ driver.find_element_by_id("submit").click()
 # Login
 print "# Login"
 driver.find_element_by_link_text("Log In").click()
-driver.implicitly_wait(30)
+sleep(30)
 driver.find_element_by_id("user_login").clear()
 driver.find_element_by_id("user_login").send_keys("purestorage")
 driver.find_element_by_id("user_pass").clear()
@@ -48,4 +49,5 @@ driver.find_element_by_id("wp-submit").click()
 
 # driver.quit()
 print "# driver.quit()"
+sleep(30)
 driver.quit()
