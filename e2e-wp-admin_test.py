@@ -2,7 +2,7 @@ from selenium import webdriver
 
 # Initialize Driver
 print "# Initialize Driver"
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get("http://localhost/wp-admin/setup-config.php")
 
 # Select language
