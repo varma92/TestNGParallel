@@ -4,14 +4,17 @@ from selenium import webdriver
 print "# Initialize Driver"
 driver = webdriver.Firefox()
 driver.get("http://localhost/wp-admin/setup-config.php")
+# print driver.title
 
 # Select language
 print "# Select language"
 driver.find_element_by_id("language-continue").click()
+driver.implicitly_wait(30)
 
 # Configure database
 print "# Configure database"
 driver.find_element_by_css_selector("body > p.step > a").click()
+driver.implicitly_wait(30)
 driver.find_element_by_id("uname").clear()
 driver.find_element_by_id("uname").send_keys("wordpress")
 driver.find_element_by_id("pwd").clear()
@@ -21,12 +24,11 @@ driver.find_element_by_name("submit").click()
 # Run Installation
 print "# Run Installation"
 driver.find_element_by_link_text("Run the installation").click()
+driver.implicitly_wait(30)
 driver.find_element_by_id("weblog_title").clear()
 driver.find_element_by_id("weblog_title").send_keys("Data-Storage")
 driver.find_element_by_id("user_login").clear()
 driver.find_element_by_id("user_login").send_keys("purestorage")
-#using the JavaScriptExecutor to scroll down to bottom of window
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 driver.find_element_by_id("pass1-text").clear()
 driver.find_element_by_id("pass1-text").send_keys("Pure$torage123")
 driver.find_element_by_name("pw_weak").click()
@@ -37,6 +39,7 @@ driver.find_element_by_id("submit").click()
 # Login
 print "# Login"
 driver.find_element_by_link_text("Log In").click()
+driver.implicitly_wait(30)
 driver.find_element_by_id("user_login").clear()
 driver.find_element_by_id("user_login").send_keys("purestorage")
 driver.find_element_by_id("user_pass").clear()
