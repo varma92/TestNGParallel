@@ -1,6 +1,6 @@
 from selenium import webdriver
  
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.implicitly_wait(30)
 driver.get("http://localhost:9090/wp-admin/setup-config.php")
 # print driver.title
