@@ -3,7 +3,7 @@ from selenium import webdriver
 # Initialize Driver
 print "# Initialize Driver"
 driver = webdriver.Firefox()
-driver.implicitly_wait(30)
+# driver.implicitly_wait(30)
 driver.get("http://localhost/wp-admin/setup-config.php")
 # print driver.title
 
