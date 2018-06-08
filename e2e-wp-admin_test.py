@@ -25,6 +25,8 @@ driver.find_element_by_id("weblog_title").clear()
 driver.find_element_by_id("weblog_title").send_keys("Data-Storage")
 driver.find_element_by_id("user_login").clear()
 driver.find_element_by_id("user_login").send_keys("purestorage")
+#using the JavaScriptExecutor to scroll down to bottom of window
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 driver.find_element_by_id("pass1-text").clear()
 driver.find_element_by_id("pass1-text").send_keys("Pure$torage123")
 driver.find_element_by_name("pw_weak").click()
