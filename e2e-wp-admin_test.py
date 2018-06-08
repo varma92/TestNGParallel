@@ -36,6 +36,7 @@ driver.find_element_by_name("pw_weak").click()
 driver.find_element_by_id("admin_email").clear()
 driver.find_element_by_id("admin_email").send_keys("admin@email.com")
 driver.find_element_by_id("submit").click()
+sleep(30)
 
 # Login
 print "# Login"
