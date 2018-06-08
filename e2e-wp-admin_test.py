@@ -10,7 +10,7 @@ driver.find_element_by_id("language-continue").click()
 
 
 # Configure database
-driver.find_elements_by_link_text("Let’s go!")[0].click()
+driver.find_elements_by_link_text("Let's go!")[0].click()
 driver.find_element_by_id("uname").clear()
 driver.find_element_by_id("uname").send_keys("wordpress")
 driver.find_element_by_id("pwd").clear()
