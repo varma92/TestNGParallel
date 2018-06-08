@@ -3,7 +3,6 @@ from selenium import webdriver
 # Initialize Driver
 print "# Initialize Driver"
 driver = webdriver.Firefox()
-# driver.implicitly_wait(30)
 driver.get("http://localhost/wp-admin/setup-config.php")
 # print driver.title
 
@@ -11,10 +10,9 @@ driver.get("http://localhost/wp-admin/setup-config.php")
 print "# Select language"
 driver.find_element_by_id("language-continue").click()
 
-
 # Configure database
 print "# Configure database"
-driver.find_elements_by_link_text("Let's go!")[0].click()
+driver.find_element_by_css_selector("body > p.step > a").click()
 driver.find_element_by_id("uname").clear()
 driver.find_element_by_id("uname").send_keys("wordpress")
 driver.find_element_by_id("pwd").clear()
@@ -23,7 +21,7 @@ driver.find_element_by_name("submit").click()
 
 # Run Installation
 print "# Run Installation"
-driver.find_elements_by_link_text("Run the installation")[0].click()
+driver.find_element_by_link_text("Run the installation").click()
 # driver.find_element_by_id("weblog_title").clear()
 driver.find_element_by_id("weblog_title").send_keys("Data-Storage")
 driver.find_element_by_id("user_login").clear()
@@ -37,7 +35,7 @@ driver.find_element_by_id("submit").click()
 
 # Login
 print "# Login"
-driver.find_elements_by_link_text("Log In")[0].click()
+driver.find_element_by_link_text("Log In").click()
 driver.find_element_by_id("user_login").clear()
 driver.find_element_by_id("user_login").send_keys("purestorage")
 driver.find_element_by_id("user_pass").clear()
